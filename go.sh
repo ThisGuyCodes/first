@@ -7,7 +7,13 @@ curl -sSf -L https://install.lix.systems/lix | sh -s -- install
 echo "Lix installed"
 
 echo "Installing developer tools..."
+# Install XCode Command Line Tools.
 xcode-select --install || true
+
+# Wait until XCode Command Line Tools installation has finished.
+until xcode-select --print-path &> /dev/null; do
+  sleep 5;
+done
 
 echo "Cloning nix config repo..."
 mkdir -p ~/.config
