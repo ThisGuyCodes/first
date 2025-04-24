@@ -15,6 +15,9 @@ until xcode-select --print-path &> /dev/null; do
   sleep 5;
 done
 
+echo "Installing homebrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 echo "Cloning nix config repo..."
 mkdir -p ~/.config
 git clone https://github.com/ThisGuyCodes/nix-home ~/.config/nix-darwin
