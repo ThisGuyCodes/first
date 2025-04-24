@@ -19,8 +19,7 @@ echo "Cloning nix config repo..."
 mkdir -p ~/.config
 git clone https://github.com/ThisGuyCodes/nix-home ~/.config/nix-darwin
 
-echo "Installing darwin-rebuild..."
-nix run nix-darwin/master#darwin-rebuild -- switch
+echo "First derive..."
+/nix/var/nix/profiles/default/bin/nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/.config/nix-darwin
 
 echo "Go!"
-darwin-rebuild switch --flake ~/.config/nix-darwi
