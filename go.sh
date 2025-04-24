@@ -6,6 +6,9 @@ curl -sSf -L https://install.lix.systems/lix | sh -s -- install
 
 echo "Lix installed"
 
+echo "Installing developer tools..."
+xcode-select --install || true
+
 echo "Cloning nix config repo..."
 mkdir -p ~/.config
 git clone https://github.com/ThisGuyCodes/nix-home ~/.config/nix-darwin
